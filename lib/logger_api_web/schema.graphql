@@ -1,0 +1,21 @@
+schema {
+  subscription: RootSubscriptionType
+  query: RootQueryType
+}
+
+type Event {
+  id: ID!
+  identity: String!
+  table: String!
+  database: String!
+  query: String!
+}
+
+type RootQueryType {
+  "Get all events"
+  allEvents: [Event!]!
+}
+
+type RootSubscriptionType {
+  eventAdded(database: String!): Event
+}
