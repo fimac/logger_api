@@ -29,6 +29,7 @@ defmodule LoggerApiWeb.UserSocket do
   # performing token verification on connect.
   @impl true
   def connect(_params, socket, _connect_info) do
+    IO.puts("hitting connectin user socket")
     {:ok, socket}
   end
 

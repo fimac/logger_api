@@ -16,6 +16,7 @@ defmodule LoggerApiWeb.AuditLogsChannel do
   # by sending replies to requests from the client
   @impl true
   def handle_in("ping", payload, socket) do
+    IO.puts("hitting handle in")
     {:reply, {:ok, payload}, socket}
   end
 
@@ -23,6 +24,7 @@ defmodule LoggerApiWeb.AuditLogsChannel do
   # broadcast to everyone in the current topic (audit_logs:lobby).
   @impl true
   def handle_in("shout", payload, socket) do
+    IO.puts("hitting handle in shout")
     broadcast(socket, "shout", payload)
     {:noreply, socket}
   end
