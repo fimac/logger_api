@@ -1,5 +1,6 @@
 defmodule LoggerApiWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :logger_api
+  use Absinthe.Phoenix.Endpoint
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -10,6 +11,14 @@ defmodule LoggerApiWeb.Endpoint do
     signing_salt: "KR1qurDB",
     same_site: "Lax"
   ]
+
+  # The socket ties transports and channels together.
+
+  # By default, Phoenix uses WebSockets instead of long-polling, but it comes with support for both.
+  # Notice websockets: true and longpolling: false in the socket method.
+  socket "/socket", LoggerApiWeb.UserSocket,
+    websocket: true,
+    longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket,
     websocket: [connect_info: [session: @session_options]],

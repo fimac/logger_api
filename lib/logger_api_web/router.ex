@@ -10,6 +10,7 @@ defmodule LoggerApiWeb.Router do
 
     forward "/graphiql", Absinthe.Plug.GraphiQL,
       schema: LoggerApiWeb.Schema,
+      socket: MyAppWeb.UserSocket,
       interface: :simple,
       context: %{pubsub: LoggerApiWeb.Endpoint}
   end
