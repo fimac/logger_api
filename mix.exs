@@ -38,6 +38,7 @@ defmodule LoggerApi.MixProject do
       {:phoenix_ecto, "~> 4.4"},
       {:phoenix_pubsub, "~> 2.0"},
       {:absinthe_phoenix, "~> 2.0"},
+      {:absinthe_graphql_ws, github: "geometerio/absinthe_graphql_ws"},
       {:ecto_sql, "~> 3.10"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_live_dashboard, "~> 0.8.3"},
