@@ -7,6 +7,7 @@ defmodule LoggerApiWeb.AuditLogsResolver do
 
   def create_event(_parent, event, _resolution) do
     # Just for testing flow.
+    IO.inspect(event, label: "event===")
     {:ok, event}
   end
 end
