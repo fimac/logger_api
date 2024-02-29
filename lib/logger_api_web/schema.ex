@@ -18,14 +18,14 @@ defmodule LoggerApiWeb.Schema do
     end
   end
 
-  subscription do
-    field :event_added, :event do
-      arg(:database, non_null(:string))
-      # used to configure the subscription field.
-      # perform other checks like authorization to accept/reject the subscription
-      config(fn %{database: database}, %{context: _context} ->
-        {:ok, topic: "event:#{database}"}
-      end)
-    end
-  end
+  # subscription do
+  #   field :event_added, :event do
+  #     arg(:database, non_null(:string))
+  #     # used to configure the subscription field.
+  #     # perform other checks like authorization to accept/reject the subscription
+  #     config(fn %{database: database}, %{context: _context} ->
+  #       {:ok, topic: "event:#{database}"}
+  #     end)
+  #   end
+  # end
 end
