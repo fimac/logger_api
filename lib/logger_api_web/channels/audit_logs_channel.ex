@@ -1,13 +1,15 @@
 defmodule LoggerApiWeb.AuditLogsChannel do
   use LoggerApiWeb, :channel
-
+  # This channel is responsible for handling the live communication between the client and server.
   @impl true
-  def join("audit_logs:lobby", payload, socket) do
-    if authorized?(payload) do
-      {:ok, socket}
-    else
-      {:error, %{reason: "unauthorized"}}
-    end
+  def join("audit_logs:lobby", _payload, socket) do
+    # if authorized?(payload) do
+    #   {:ok, socket}
+    # else
+    #   {:error, %{reason: "unauthorized"}}
+    # end
+    IO.puts("hitting join")
+    {:ok, socket}
   end
 
   # Channels can be used in a request/response fashion
@@ -25,8 +27,8 @@ defmodule LoggerApiWeb.AuditLogsChannel do
     {:noreply, socket}
   end
 
-  # Add authorization logic here as required.
-  defp authorized?(_payload) do
-    true
-  end
+  # # Add authorization logic here as required.
+  # defp authorized?(_payload) do
+  #   true
+  # end
 end

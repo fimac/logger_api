@@ -1,5 +1,6 @@
 schema {
   subscription: RootSubscriptionType
+  mutation: RootMutationType
   query: RootQueryType
 }
 
@@ -11,9 +12,24 @@ type Event {
   query: String!
 }
 
+type EventMutationResult {
+  event: Event
+}
+
+input EventCreateInput {
+  identity: String!
+  table: String!
+  database: String!
+  query: String!
+}
+
 type RootQueryType {
   "Get all events"
   allEvents: [Event!]!
+}
+
+type RootMutationType {
+  createEvent(event: EventCreateInput!): EventMutationResult!
 }
 
 type RootSubscriptionType {

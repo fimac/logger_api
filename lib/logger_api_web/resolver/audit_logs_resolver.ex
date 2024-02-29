@@ -4,4 +4,9 @@ defmodule LoggerApiWeb.AuditLogsResolver do
   def all_events(_root, _args, _info) do
     {:ok, AuditLogs.list_events()}
   end
+
+  def create_event(_parent, event, _resolution) do
+    # Just for testing flow.
+    {:ok, event}
+  end
 end
