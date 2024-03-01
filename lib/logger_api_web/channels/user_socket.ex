@@ -1,9 +1,6 @@
 defmodule LoggerApiWeb.UserSocket do
   use Phoenix.Socket
 
-  use Absinthe.Phoenix.Socket,
-    schema: LoggerApiWeb.Schema
-
   # A Socket handler
   #
   # It's possible to control the websocket connection and
