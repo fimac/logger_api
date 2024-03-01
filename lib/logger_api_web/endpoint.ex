@@ -16,11 +16,11 @@ defmodule LoggerApiWeb.Endpoint do
 
   # By default, Phoenix uses WebSockets instead of long-polling, but it comes with support for both.
   # Notice websockets: true and longpolling: false in the socket method.
-  # socket "/socket", LoggerApiWeb.UserSocket,
-  #   websocket: [connect_info: [session: @session_options]],
-  #   longpoll: [connect_info: [session: @session_options]]
+  socket "/socket", LoggerApiWeb.UserSocket,
+    websocket: [connect_info: [session: @session_options]],
+    longpoll: [connect_info: [session: @session_options]]
 
-  socket "/api/graphql-ws", LoggerApiWeb.GraphqlWSSocket,
+  socket "/api/graphql-ws", MyAppWeb.GraphqlWSSocket,
     websocket: [path: "", subprotocols: ["graphql-transport-ws"]]
 
   socket "/live", Phoenix.LiveView.Socket,
