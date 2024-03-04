@@ -13,9 +13,5 @@ defmodule LoggerApiWeb.Router do
       socket: LoggerApiWeb.GraphqlWSSocket,
       interface: :simple,
       context: %{pubsub: LoggerApiWeb.Endpoint}
-
-    forward "/api/graphql-ws/websocket", Absinthe.GraphqlWS.Socket,
-      schema: LoggerApiWeb.Schema,
-      socket: LoggerApiWeb.GraphqlWSSocket
   end
 end

@@ -21,8 +21,7 @@ defmodule LoggerApiWeb.Endpoint do
     longpoll: [connect_info: [session: @session_options]]
 
   socket "/api/graphql-ws", LoggerApiWeb.GraphqlWSSocket,
-    websocket: [path: "", subprotocols: ["graphql-transport-ws"]],
-    longpoll: [connect_info: [session: @session_options]]
+    websocket: [path: "", subprotocols: ["graphql-transport-ws"]]
 
   socket "/live", Phoenix.LiveView.Socket,
     websocket: [connect_info: [session: @session_options]],
